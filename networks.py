@@ -2,6 +2,12 @@ import torch.nn as nn
 
 
 class ConvUpscaleDenoiser(nn.Module):
+    """
+    An autoencoder network which uses
+    Upscale (with nearest neighbor interpolation)
+    followed by a Convolutional layer for decoding.
+    """
+
     def __init__(self):
         super().__init__()
         self.encoder = nn.Sequential(
@@ -46,6 +52,11 @@ class ConvUpscaleDenoiser(nn.Module):
 
 
 class ConvTransposeDenoiser(nn.Module):
+    """
+    An autoencoder network which uses
+    Transpose Convolutional layers for decoding.
+    """
+
     def __init__(self):
         super().__init__()
         self.encoder = nn.Sequential(
